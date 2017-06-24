@@ -1,9 +1,11 @@
 #include <iostream>
+#include "model/character.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    Character a;
+    a.printCharacter();
     return 0;
 }
