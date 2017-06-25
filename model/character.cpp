@@ -12,11 +12,23 @@ Character::Character()
     this->r.y=200;
     this->r.h=40;
     this->r.w=20;
-    this->team = 0;
     this->t.t= NULL;
     this->t.type=TARGET_INVALID;
     this->dist_cam = 0;
-};
+}
+
+Character::Character(int type)
+{
+    this->hp=0;
+    this->r.x=65;
+    this->r.y=200;
+    this->r.h=40;
+    this->r.w=20;
+    this->t.t= NULL;
+    this->t.type=TARGET_INVALID;
+    this->dist_cam = 0;
+    this->type = type;
+}
 
 void Character::setCoord(int x, int y)
 {
@@ -44,7 +56,7 @@ int Character::attack()
                     return 1;
            }
            else if(enemy->hp >0){
-                enemy->hp-=abs((this->damage)-enemy->armor);
+                enemy->decreaseHp(abs((this->damage)-enemy->armor));
                 enemy->setAttacked(this);
            }
         }
@@ -78,7 +90,7 @@ int Character::moveC(int x, int y)
     return 0;
 }
 
-int Character::chooseMoveCode(int x, int y)
+int Character::chooseMoveCode(int x, int y) const
 {
     return 0;
 }
@@ -122,10 +134,20 @@ void Character::setRect(SDL_Rect r)
     this->r.h=r.h;
     this->r.w=r.w;
 }
-
-void Character::printCharacter()
+void Character::increaseHp(int a)
 {
-    std::cout << this->hp << "\n" << std::endl;
+    this->hp +=a;
+}
+
+void Character::decreaseHp(int a)
+{
+    this->hp -= a;
+}
+
+
+void Character::printCharacter() const
+{
+    std::cout << "I have " << this->hp << "Hp" << std::endl;
 }
 
 Character::~Character()

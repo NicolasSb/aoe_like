@@ -1,27 +1,28 @@
-CC=gcc
+CC=g++
 CFLAGS=-Wall -Wextra -pedantic-errors `sdl-config --cflags`
 LDFLAGS=`sdl-config --libs` -lSDL -lSDL_image -lcmocka -lm -lSDL_ttf
 VPATH=model:view:controller
 
-OBJS=main.o
+OBJS=main.o character.o archer.o villager.o swordman.o math_utils.o
 
 TEST_OBJS=
 
 all: aoe_like
 
-aoe4: $(OBJS) $(TEST_OBJS)
+aoe_like: $(OBJS) $(TEST_OBJS)
 	$(CC) $^ -o $@ $(LDFLAGS)
 	@mkdir ./obj
 	@mv *.o ./obj
 
-main.o :
+main.o :character.o archer.o villager.o swordman.o
+character.o: math_utils.o
 
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	@rm -f aoe4
+	@rm -f aoe_like
 	@rm -f *.o *.gcno *.gcda *.save
 	@rm -r ./obj
 	

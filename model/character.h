@@ -10,6 +10,10 @@ struct Target_s
     void *t;
 };
 
+enum type_characters{
+    VILLAGER, SWORDMAN, ARCHER
+};
+
 enum action_flag
 {
     WAIT, MOVE, ATTACK, COLLECT, BUILD, CONSTRUCT, DO_NOTHING
@@ -27,7 +31,7 @@ enum target_t
 
 class Character
 {
-private :
+protected :
     int hp;
     int damage;
     int armor;
@@ -44,12 +48,13 @@ private :
 
 public :
     Character();// constructeur
+    Character(int type);
     void setCoord(int x, int y);
     int attack();
     int setAttacked(Character *enemy);
     int followC(Character *enemy);
     int moveC(int x, int y);
-    int chooseMoveCode(int x, int y);
+    int chooseMoveCode(int x, int y)const;
     void getCoordinates(int *, int*)const;
     int getTeam()const;
     void setTarget(void *target, int target_Type);
@@ -57,7 +62,9 @@ public :
     int getActionFlagC()const;
     void setTeam(int team_number);
     void setRect(SDL_Rect r);
-    void printCharacter();
+    void increaseHp(int);
+    void decreaseHp(int);
+    void printCharacter()const;
     ~Character();
 };
 #endif // CHAR_H
