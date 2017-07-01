@@ -15,7 +15,7 @@ Character::Character()
     this->t.t= NULL;
     this->t.type=TARGET_INVALID;
     this->dist_cam = 0;
-}
+};
 
 Character::Character(int type)
 {
@@ -49,7 +49,7 @@ int Character::attack()
         tmp_distPlY +=this->r.h/2;
         tmpDist_enX +=enemy->r.w/2;
         tmpDist_enX +=enemy->r.h/2;
-        attack_distance  = computeDistance(tmp_distPlX,tmp_distPlY,tmpDist_enX,tmpDist_enY);
+        attack_distance = computeDistance(tmp_distPlX,tmp_distPlY,tmpDist_enX,tmpDist_enY);
         if(this->attack_range > attack_distance && enemy_team_number != player_team_number){
            if (enemy->hp <=0){
                     this->setActionFlagC(WAIT);
