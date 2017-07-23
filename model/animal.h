@@ -37,7 +37,7 @@ public:
     Animal();
     void set_coordA(int x, int y);
     void get_coordA(int *x, int *y)const;
-
+    int getDistToCam() const;
     int moveA();
 
     int is_attacking ()const;

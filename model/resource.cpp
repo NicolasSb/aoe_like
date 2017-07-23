@@ -57,6 +57,11 @@ void Resource::get_coordo (int *x, int *y) const
     }
 }
 
+int Resource::getDistToCam() const
+{
+    return this->dist_to_cam;
+}
+
 /**
 *   \brief improve the collect time
 */

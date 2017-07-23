@@ -28,6 +28,12 @@ void Animal::get_coordA(int *x, int *y)const
     }
 }
 
+
+int Animal::getDistToCam() const
+{
+    return this->dist_to_cam;
+}
+
 /**
 *   \brief set the position of the animal
 */

@@ -14,7 +14,7 @@ Character::Character()
     this->r.w=20;
     this->t.t= NULL;
     this->t.type=TARGET_INVALID;
-    this->dist_cam = 0;
+    this->dist_to_cam = 0;
 };
 
 Character::Character(int type)
@@ -137,6 +137,10 @@ void Character::decreaseHp(int a)
     this->hp -= a;
 }
 
+int Character::getDistToCam() const
+{
+    return this->dist_to_cam;
+}
 
 void Character::printCharacter() const
 {

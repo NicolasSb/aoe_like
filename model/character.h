@@ -43,7 +43,7 @@ protected :
     int dest_y;
     int type;
     int team;
-    int dist_cam;
+    int dist_to_cam;
     int action;
 
 public :
@@ -64,6 +64,7 @@ public :
     void setRect(SDL_Rect r);
     void increaseHp(int);
     void decreaseHp(int);
+    int getDistToCam() const;
     void printCharacter()const;
     ~Character();
 };

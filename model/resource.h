@@ -28,6 +28,7 @@ public:
     Resource(ResType t);
     void set_position (int x, int y);
     void get_coordo (int *x, int *y) const;
+    int getDistToCam() const;
     void improve_collect_time ();
     int decreaseResource(int collect);
     void printResource()const;

@@ -33,6 +33,11 @@ int Building::getActionFlag()const
     return this->action;
 }
 
+int Building::getDistToCam() const
+{
+    return this->dist_to_cam;
+}
+
 int Building::getHP()const
 {
     return this->hp;

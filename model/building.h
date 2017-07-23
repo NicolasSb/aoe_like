@@ -26,6 +26,7 @@ public :
     void setActionFlag(action_building flag);
     void setTargetB(void *);
     int getActionFlag()const;
+    int getDistToCam() const;
     int getHP()const;
     void increaseHP(int a);
     void decreaseHP(int);
