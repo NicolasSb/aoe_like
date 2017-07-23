@@ -1,6 +1,8 @@
 #ifndef ANIMAL_T_H
 #define ANIMAL_T_H
 
+#include "animal.h"
+
 #define WOLF_SPEED 2
 #define BOAR_SPEED 1
 #define SHEEP_SPEED 1

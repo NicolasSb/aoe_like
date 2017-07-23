@@ -47,7 +47,7 @@ protected :
     int action;
 
 public :
-    Character();// constructeur
+    Character();
     Character(int type);
     void setCoord(int x, int y);
     int attack();

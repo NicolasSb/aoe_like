@@ -19,14 +19,7 @@ Character::Character()
 
 Character::Character(int type)
 {
-    this->hp=0;
-    this->r.x=65;
-    this->r.y=200;
-    this->r.h=40;
-    this->r.w=20;
-    this->t.t= NULL;
-    this->t.type=TARGET_INVALID;
-    this->dist_cam = 0;
+    Character();
     this->type = type;
 }
 

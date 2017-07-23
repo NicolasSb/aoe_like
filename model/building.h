@@ -3,9 +3,8 @@
 
 #include <SDL/SDL.h>
 
-enum type_building
-{HOUSE, BARRACKS, CITY_HALL, TOWER
-};
+enum type_building {HOUSE, BARRACKS, CITY_HALL, TOWER};
+
 enum action_building {SLEEP, BUILD_PERSO, CONSTRUCT_P};
 
 
@@ -14,8 +13,8 @@ class Building
 protected :
     int range;
     int hp;
-    int type;
-    int action;
+    type_building type;
+    action_building action;
     SDL_Rect building_r;
     int team;
     int dist_to_cam;
@@ -23,18 +22,15 @@ protected :
 
 public :
     Building();
-    Building(int type);
-    void setActionFlag(int flag);
+    Building(type_building type);
+    void setActionFlag(action_building flag);
     void setTargetB(void *);
     int getActionFlag()const;
     int getHP()const;
     void increaseHP(int a);
     void decreaseHP(int);
     void printBuilding()const;
+    ~Building();
 };
 
-
-
-
-
-#endif // BUILDING_H
+#endif
