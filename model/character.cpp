@@ -15,7 +15,7 @@ Character::Character()
     this->t.t= NULL;
     this->t.type=TARGET_INVALID;
     this->dist_to_cam = 0;
-};
+}
 
 Character::Character(int type)
 {

@@ -3,7 +3,7 @@ CFLAGS=-Wall -Wextra -pedantic-errors `sdl-config --cflags`
 LDFLAGS=`sdl-config --libs` -lSDL -lSDL_image -lcmocka -lm -lSDL_ttf
 VPATH=model:view:controller
 
-OBJS=main.o character.o archer.o villager.o swordman.o math_utils.o
+OBJS=main.o characterType.o resourceType.o resource.o character.o math_utils.o 
 
 TEST_OBJS=
 
@@ -14,7 +14,9 @@ aoe_like: $(OBJS) $(TEST_OBJS)
 	@mkdir ./obj
 	@mv *.o ./obj
 
-main.o :character.o archer.o villager.o swordman.o
+main.o:characterType.o resourceType.o
+characterType.o: character.o
+resourceType.o:resource.o
 character.o: math_utils.o
 
 
